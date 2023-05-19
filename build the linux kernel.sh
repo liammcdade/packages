@@ -1,5 +1,5 @@
-wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.0.7.tar.xz
-tar xvf linux-6.0.7.tar.xz
+wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.10.11.tar.xz
+tar xvf linux-5.10.11.tar.xz
 sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison
 cd linux-6.0.7
 make
