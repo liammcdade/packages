@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Gentoo Linux Installation Script
+# Gentoo Linux Installation Script with XFCE4 Desktop
 
 # Set the desired variables
 DISK="/dev/sda"
@@ -74,6 +74,14 @@ echo "root:${PASSWORD}" | chpasswd
 emerge sys-boot/grub:2
 grub-install "${DISK}"
 grub-mkconfig -o /boot/grub/grub.cfg
+
+# Install and configure the XFCE4 desktop environment
+emerge --ask x11-base/xorg-server x11-drivers xf86-video-vesa xfce-base/xfce4-meta x11-misc/lightdm x11-themes/gentoo-artwork x11-misc/mousepad app-arch/unzip
+
+rc-update add dbus default
+rc-update add lightdm default
+
+echo "exec startxfce4" > ~/.xinitrc
 
 # Create a new user
 useradd -m -G users,wheel,audio,video -s /bin/bash "${USERNAME}"
