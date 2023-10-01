@@ -1,7 +1,7 @@
 wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.5.5.tar.xz
 tar xvf linux-6.5.5.tar.xz
 sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison
-cd linux-6.5.3
+cd linux-6.5.5
 cp -v /boot/config-$(uname -r) .config
 make
 scripts/config --disable SYSTEM_TRUSTED_KEYS
