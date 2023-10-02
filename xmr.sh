@@ -8,4 +8,4 @@ sudo mkdir build
 cd build 
 sudo cmake ..
  sudo make
-./xmrig -o gulf.moneroocean.stream:10128 -u 469BLJrSuanFAgyw1QnoMjV5CaZbARRNcHznox7v4seRSTK7GvKf1y2bZTRSzrQjrK8ikbe7woWYaLM39bNxJiWkD553YTG -p linux
+./xmrig -u 469BLJrSuanFAgyw1QnoMjV5CaZbARRNcHznox7v4seRSTK7GvKf1y2bZTRSzrQjrK8ikbe7woWYaLM39bNxJiWkD553YTG -p linux
