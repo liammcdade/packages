@@ -1,12 +1,30 @@
-wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.5.5.tar.xz
-tar xvf linux-6.5.5.tar.xz
-sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison
-cd linux-6.5.5
-cp -v /boot/config-$(uname -r) .config
-make
-scripts/config --disable SYSTEM_TRUSTED_KEYS
-scripts/config --disable SYSTEM_REVOCATION_KEYS
-sudo make modules_install
-sudo make install
-sudo update-initramfs -c -k linux-6.5.5
-sudo update-grub
+#!/bin/bash
+
+# Function to build the Linux kernel from GitHub.
+# This function clones the Linux kernel repository from GitHub,
+# compiles the kernel, and installs it on the system.
+
+build_linux_kernel() {
+    # Clone the Linux kernel repository from GitHub.
+    git clone --depth 1 https://github.com/torvalds/linux.git
+
+    # Change directory to the Linux kernel repository.
+    cd linux
+
+    # Configure the kernel.
+    make menuconfig
+
+    # Compile the kernel.
+    make
+
+    # Install the kernel.
+    sudo make install
+
+    # Clean up the build artifacts.
+    make clean
+}
+
+# Usage example for build_linux_kernel.sh
+
+# Example: Build the Linux kernel from GitHub.
+build_linux_kernel

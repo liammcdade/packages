@@ -1,5 +1,0 @@
-sudo apt update 
-wget https://code.visualstudio.com/docs/?dv=linux64_deb
-cd \Downloads
-sudo dpkg -i "code_1.77.3-1681292746_amd64.deb"
-sudo apt install -f
